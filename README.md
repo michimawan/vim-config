@@ -6,28 +6,30 @@ Konfigurasi VIM untuk kebutuhan KMKLabs Engineer
 This config is built primarily to work on top of Linux Gvim, but should be usable on top of other `macvim` or `gvim` installations that are built with all of the `vim` features necessary to support the used plugins.
 
 Dependency yg perlu di install:
-- ruby-dev 
+- ruby-dev
 - vim ruby version sama dengan system ruby.
+- silversearcher-ag
+- install FZF --> https://github.com/junegunn/fzf
 
 Untuk mengecek ruby di vim, gunakan `:ruby puts "#{RUBY_DESCRIPTION}"`
-Untuk mengecek ruby di system, gunakan `ruby -v`. 
+Untuk mengecek ruby di system, gunakan `ruby -v`.
 
-Jika versi ruby system tidak sama, silahkan install ruby menggunakan rvm atau rbenv. Selanjutnya, masuk ke directory plug-in command-t pada local workstation kalian, dan lakukan perintah sebagai berikut: 
+Jika versi ruby system tidak sama, silahkan install ruby menggunakan rvm atau rbenv. Selanjutnya, masuk ke directory plug-in command-t pada local workstation kalian, dan lakukan perintah sebagai berikut:
 - make clean
 - make
 - sudo make install
 
 Cek kembali lagi pada GVIM, dan pastikan tidak terjadi segmentation fault.
 
-## Quick Install 
+## Quick Install
 ### With Wget
 ```
-sh -c "$(wget https://raw.githubusercontent.com/KMK-ONLINE/vim-config/master/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/michimawan/vim-config/custom/install.sh -O -)"
 ```
 
 ### With Curl
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/KMK-ONLINE/vim-config/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/michimawan/vim-config/custom/install.sh)"
 ```
 
 ## Customizing

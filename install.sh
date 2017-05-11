@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export VIM_REPO="git@github.com:KMK-ONLINE/vim-config.git"
+export VIM_REPO="https://github.com/michimawan/vim-config.git"
 export VIM_INSTALL_DIR="${HOME}/.vim-config"
 export VIM_DIR="${HOME}/.vim"
 

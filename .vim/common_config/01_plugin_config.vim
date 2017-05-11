@@ -231,6 +231,7 @@ call plug#begin('~/.vim/plugged')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_scss_checkers = ['stylelint']
 
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
