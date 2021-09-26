@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/ruby-matchit'
   Plug 'tpope/vim-abolish'
   Plug 'mattn/emmet-vim'
-
+  Plug 'leafgarland/typescript-vim'
 
  " Vim airline configs
   Plug 'bling/vim-airline'
@@ -176,14 +176,6 @@ call plug#begin('~/.vim/plugged')
 
 " Blade syntax highlighting
   Plug 'xsbeats/vim-blade'
-
-" facebook
-  Plug 'mxw/vim-xhp'
-  autocmd FileType php set tabstop=4|set softtabstop=4|set shiftwidth=4
-  autocmd FileType hack set tabstop=4|set softtabstop=4|set shiftwidth=4
-  au BufEnter *.php set ai sw=4 ts=4 sta et fo=croql
-  au BufEnter *.hh set ai sw=4 ts=4 sta et fo=croql
-  au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
 
 
 " php-cs-fixer (for indentation)
