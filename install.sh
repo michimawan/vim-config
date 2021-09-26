@@ -15,7 +15,7 @@ if [ -d $VIM_INSTALL_DIR ]; then
   rm -rf $VIM_INSTALL_DIR
 fi
 
-git clone $VIM_REPO $VIM_INSTALL_DIR;
+git clone --branch custom $VIM_REPO $VIM_INSTALL_DIR;
 curl -fLo "${VIM_INSTALL_DIR}/.vim/autoload/plug.vim" --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
