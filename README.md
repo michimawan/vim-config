@@ -16,8 +16,8 @@ Untuk mengecek ruby di system, gunakan `ruby -v`.
 
 Jika versi ruby system tidak sama, silahkan install ruby menggunakan rvm atau rbenv. Selanjutnya, kita akan meng-compile command-t [source](https://github.com/wincent/command-t/blob/main/doc/command-t.txt)
 ```
-$ cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
-$ /usr/local/opt/ruby/bin/ruby extconf.rb
+$ cd ~/.vim/plugged/command-t/ruby/command-t/ext/command-t/
+$ ruby extconf.rb
 $ make
 $ sudo make install
 ```
