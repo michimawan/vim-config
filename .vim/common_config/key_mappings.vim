@@ -74,3 +74,6 @@
 " CTRL-V and SHIFT-Insert are Paste
   map <S-Insert> "+gP
   cmap <S-Insert> <C-R>+
+
+" Fuzzy search
+  map <Leader>t :FZF<cr>

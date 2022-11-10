@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'vim-scripts/ruby-matchit'
   Plug 'tpope/vim-abolish'
-  Plug 'mattn/emmet-vim'
   Plug 'leafgarland/typescript-vim'
 
  " Vim airline configs
@@ -135,12 +134,6 @@ call plug#begin('~/.vim/plugged')
     let g:syntastic_ruby_checkers = ['rubocop']
 
 
-
-" gundo for awesome undo tree visualization
-  Plug 'sjl/gundo.vim'
-    map <Leader>h :GundoToggle<CR>
-
-
 " rails.vim, nuff' said
   Plug 'tpope/vim-rails'
     map <Leader>oc :Rcontroller<Space>
@@ -177,7 +170,6 @@ call plug#begin('~/.vim/plugged')
 " Blade syntax highlighting
   Plug 'xsbeats/vim-blade'
 
-
 " php-cs-fixer (for indentation)
   Plug 'stephpy/vim-php-cs-fixer'
 
@@ -192,29 +184,11 @@ call plug#begin('~/.vim/plugged')
   autocmd FileType scss set tabstop=2|set softtabstop=2|set shiftwidth=2
   au BufEnter *.scss set ai sw=2 ts=2 sta et fo=croql
 
-  autocmd FileType xbt.php set tabstop=2|set softtabstop=2|set shiftwidth=2
-  au BufEnter *.xbt.php set ai sw=2 ts=2 sta et fo=croql
-
   Plug 'janko-m/vim-test'
 
   function! s:cat(filename) abort
     return system('cat '.a:filename)
   endfunction
-
-  function! VagrantTransform(cmd) abort
-    if !empty(glob('Vagrantfile'))
-      let vagrant_project = get(matchlist(s:cat('Vagrantfile'), '\vconfig\.vm\.synced_folder \".+\", \"(.+)\",\s+disabled:\s+false'), 1)
-      return 'vagrant ssh --command '.shellescape('cd '.vagrant_project.'; '.a:cmd)
-    else
-      return a:cmd
-    endif
-  endfunction
-
-  let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
-  let g:test#transformation = 'vagrant'
-
-  nmap <silent> <leader>T :TestFile<CR>
-  nmap <silent> <leader>F :TestNearest<CR>
 
 " syntastic for eslint and stylelint
   Plug 'vim-syntastic/syntastic'
@@ -222,6 +196,8 @@ call plug#begin('~/.vim/plugged')
   let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['scss','javascript']}
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_scss_checkers = ['stylelint']
+
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
