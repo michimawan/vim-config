@@ -199,6 +199,13 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" fold code in python
+  Plug 'tmhedberg/SimpylFold'
+  let g:SimpylFold_docstring_preview = 1
+  let g:SimpylFold_fold_docstring = 0
+  let g:SimpylFold_fold_import = 1
+  set foldlevel=99
+
 call plug#end()
 
 filetype plugin indent on
