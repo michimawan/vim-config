@@ -77,3 +77,7 @@
 
 " Fuzzy search
   map <Leader>t :FZF<cr>
+
+" Tab
+  inoremap <Tab> <C-n>
+  inoremap <S-Tab> <C-p>
