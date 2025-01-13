@@ -20,10 +20,6 @@ call plug#begin('~/.vim/plugged')
 " Easy motion config
   Plug 'easymotion/vim-easymotion'
 
-"Supertab code completion"
-  Plug 'ervandew/supertab'
-  let g:SuperTabContextDefaultCompletionType = "<c-n>"
-
 " Command T
   Plug 'wincent/command-t', {'do': 'cd ruby/command-t && ruby extconf.rb && make'}
     nmap <C-p> :<C-U>CommandT<CR>
@@ -205,6 +201,8 @@ call plug#begin('~/.vim/plugged')
   let g:SimpylFold_fold_docstring = 0
   let g:SimpylFold_fold_import = 1
   set foldlevel=99
+
+  Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
