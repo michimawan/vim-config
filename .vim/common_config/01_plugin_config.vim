@@ -206,8 +206,6 @@ call plug#begin('~/.vim/plugged')
   let g:SimpylFold_fold_import = 1
   set foldlevel=99
 
-  Plug 'rust-lang/rust.vim'
-
 call plug#end()
 
 filetype plugin indent on
