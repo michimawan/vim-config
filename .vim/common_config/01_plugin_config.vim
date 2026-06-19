@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'easymotion/vim-easymotion'
 
 " Command T
-  Plug 'wincent/command-t', {'do': 'cd ruby/command-t && ruby extconf.rb && make'}
+  Plug 'wincent/command-t', { 'tag': '4.0', 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
     nmap <C-p> :<C-U>CommandT<CR>
     nmap <C-b> :<C-U>CommandTBuffer<CR>
 
