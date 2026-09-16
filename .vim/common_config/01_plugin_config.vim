@@ -12,9 +12,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/ruby-matchit'
   Plug 'tpope/vim-abolish'
   Plug 'leafgarland/typescript-vim'
+  Plug 'maxmellon/vim-jsx-pretty'
 
  " Vim airline configs
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
   let g:airline_powerline_fonts = 1
 
 " Easy motion config
@@ -34,18 +35,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
     au BufNewFile,BufRead *.slim set filetype=slim
 
-" Less
-  Plug 'groenewege/vim-less'
-    au BufNewFile,BufRead *.less set filetype=less
-
-" Handlebars, Mustache, and Friends
-  Plug 'mustache/vim-mustache-handlebars'
-  au  BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hogan,*.hulk,*.hjs set filetype=html syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
-
-" Coffee script
-  Plug 'kchmck/vim-coffee-script'
-    au BufNewFile,BufRead *.coffee set filetype=coffee
-
 " AG aka The Silver Searcher
   Plug 'rking/ag.vim'
     nmap g/ :Ag!<space>
@@ -58,8 +47,11 @@ call plug#begin('~/.vim/plugged')
 
 
 " Tagbar for navigation by tags using CTags
-  Plug 'majutsushi/tagbar'
+  Plug 'preservim/tagbar'
     let g:tagbar_autofocus = 1
+    let g:tagbar_type_ruby = {
+          \ 'kinds': ['m:modules', 'c:classes', 'f:methods', 'S:singleton methods', 'd:describes']
+          \ }
     map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
     map <Leader>. :TagbarToggle<CR>
 
@@ -72,7 +64,7 @@ call plug#begin('~/.vim/plugged')
     augroup END
 
 " NERDTree for project drawer
-  Plug 'scrooloose/nerdtree'
+  Plug 'preservim/nerdtree'
     let NERDTreeHijackNetrw = 0
     nmap <leader>g :NERDTreeToggle<CR>
     nmap <leader>G :NERDTreeFind<CR>
@@ -83,6 +75,7 @@ call plug#begin('~/.vim/plugged')
 
 " GitGutter
   Plug 'airblade/vim-gitgutter'
+    let g:gitgutter_highlight_linenrs = 1
 
 " Tabular for aligning text
   Plug 'godlygeek/tabular'
@@ -118,18 +111,6 @@ call plug#begin('~/.vim/plugged')
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
 
-
-" Syntastic for catching syntax errors on save
-  Plug 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    " let g:syntastic_quiet_messages = {'level': 'warning'}
-    " syntastic is too slow for haml and sass
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_mode_map = { 'mode': 'active',
-                               \ 'passive_filetypes': ['haml','scss','sass'] }
-    let g:syntastic_ruby_checkers = ['rubocop']
-
-
 " rails.vim, nuff' said
   Plug 'tpope/vim-rails'
     map <Leader>oc :Rcontroller<Space>
@@ -163,18 +144,12 @@ call plug#begin('~/.vim/plugged')
 " MultipleCursor
   Plug 'terryma/vim-multiple-cursors'
 
-" Blade syntax highlighting
-  Plug 'xsbeats/vim-blade'
-
-" php-cs-fixer (for indentation)
-  Plug 'stephpy/vim-php-cs-fixer'
-
 " Fix indentation
   autocmd FileType javascript set tabstop=2|set softtabstop=2|set shiftwidth=2
   au BufEnter *.js set ai sw=2 ts=2 sta et fo=croql
 
-  autocmd FileType less set tabstop=2|set softtabstop=2|set shiftwidth=2
-  au BufEnter *.less set ai sw=2 ts=2 sta et fo=croql
+  autocmd FileType python set tabstop=4|set softtabstop=4|set shiftwidth=4
+
   au BufEnter *.css set ai sw=2 ts=2 sta et fo=croql
 
   autocmd FileType scss set tabstop=2|set softtabstop=2|set shiftwidth=2
@@ -186,14 +161,8 @@ call plug#begin('~/.vim/plugged')
     return system('cat '.a:filename)
   endfunction
 
-" syntastic for eslint and stylelint
-  Plug 'vim-syntastic/syntastic'
-  let g:syntastic_bash_hack = 0
-  let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['scss','javascript']}
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_scss_checkers = ['stylelint']
-
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
 " fold code in python
   Plug 'tmhedberg/SimpylFold'
